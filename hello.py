@@ -5,11 +5,13 @@ def make_cook():
 	print("Turn to other side")
 	return
 
-def make_breakfast(food):
+def make_breakfast(food, served_with):
 	make_cook()
-#	if len(served_with) == 0:
-	print("------ Yummy-----" + food )
+	if len(served_with) == 0:
+		print("------ Yummy-----" + food )
+	else:
+		print("--- Yummy ---" + food)
+		print("Served with"+ served_with)
 
 
-
-make_breakfast("apple")
+make_breakfast("apple", "sauce")
