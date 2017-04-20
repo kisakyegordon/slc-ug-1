@@ -1,0 +1,12 @@
+# Self Learning Clinic Day 4 Tasks
+
+# 1 When Presented with 2 arrays, all containning positive integers, One of the arrays has an extra number --- Heres the Outcome
+
+[1,2,3] and [1,2,3,4] should Return 4
+
+
+# 2 Basically a Binary Search that takes 2 Parameters "a" being the length of the list to be created and "b" is the difference between consecutive numbers
+
+  
+  
+# 3 A Google HomePage Clone Entirely in Html + Css  
