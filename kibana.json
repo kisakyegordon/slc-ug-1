@@ -1,0 +1,68 @@
+# 1. Search For Everything
+# 2. Search for the most recent published event
+# 3. Search for the most recent subscribed event
+# 4. Search for events within the last 24hours
+
+
+
+# 1. Search for everything.
+GET pubsub-registry/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+# 2. Search for the most recent published event
+GET pubsub-registry/_search
+{
+  "query":{
+    "match": {
+      "serviceName": "deamon"
+    }
+  },
+  "size": 10,
+  "sort":[
+    {
+    "timestamp.keyword": {
+      "order": "desc"
+    }
+  }
+]
+}
+
+# 3. Search for the most recent subscribed event
+GET pubsub-registry/_search
+{
+  "query":{
+    "match": {
+      "actionType": "subscribe"
+    }
+  },
+  "size": 1,
+  "sort":[
+    {
+    "timestamp.keyword": {
+      "order": "desc"
+    }
+  }
+]
+}
+}
+
+# 4. Search for events within the last 24hours
+GET pubsub-registry/_search
+{
+  "sort": [{
+    "timestamp.keyword": {
+      "order": "desc"
+    }
+  }],
+  "query":{
+    "range":{
+      "timestamp.keyword": {
+        "gte": "(now-24h)"
+      }
+    }
+  }
+}
